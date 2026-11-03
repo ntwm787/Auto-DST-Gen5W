@@ -1,0 +1,18 @@
+[nemesis]
+version=1.1
+id=gen5w.auto-dst
+name=Gen5W Auto DST V3
+type=service
+package-version=3.0.0
+short-desc=Automatic factory DST using the selected timezone.
+detailed-desc=Standalone port of Cabinwright Auto DST for Gen5W. Uses the selected factory UTC offset and the US/Canada DST schedule. Checks the Hyundai time-service interface; other builds require vehicle confirmation.
+os=any
+models=any
+preinstall=bin/preinstall.sh
+
+[service.0]
+name=dst
+kind=sh
+path=bin/daemon.sh
+uid=root
+mode=restart

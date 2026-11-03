@@ -42,6 +42,8 @@ For no DST, use `DST_RULE='none'`. Configure before installation by editing `pac
 
 Inspected setup: **2023 Hyundai IONIQ 5 SEL**, US Gen5W, Android **4.4.2 / API 19**, head unit **NE1AE.S5BMC.US**, firmware **NEEV23.USA.S5W_M.V015.012.260507**.
 
+Also accepted: firmware **NEEV23.USA.S5W_M.V016.010.260903**, 2023 Hyundai IONIQ 5 Limited AWD (US). Service transactions 3 `isDst` and 4 `setDst` have the same names on this firmware. The package installs there; automatic seasonal switching is not yet confirmed.
+
 The factory Binder interface was independently checked against this vehicle's code. The installer retains checksum checks for the inspected `automotive.odex` and `automotive-service.odex`; matching firmware date text alone is not sufficient. Other factory-framework binaries are rejected. This firmware compatibility check is separate from timezone selection.
 
 **This corrected standalone port has not yet been tested on the vehicle.** Earlier vehicle reports confirmed service installation and readable factory DST state, and a video supported a manual-off correction. Those observations do not establish that this rebuilt port, other timezones, automatic seasonal changes, or restart/resume catch-up work on the vehicle. Host tests exercise the upstream calculation across timezone-specific transitions; they do not validate Android POSIX TZ parsing or service behavior on the head unit.
